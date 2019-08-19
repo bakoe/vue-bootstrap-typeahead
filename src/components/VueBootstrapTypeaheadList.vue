@@ -61,6 +61,9 @@ export default {
       type: Function,
       default: (d) => d,
       validator: d => d instanceof Function
+    },
+    rawResults: {
+      type: Boolean
     }
   },
 
@@ -82,6 +85,10 @@ export default {
     },
 
     matchedItems() {
+      if (this.rawResults) {
+        return this.data
+      }
+
       if (this.query.length === 0 || this.query.length < this.minMatchingChars) {
         return []
       }

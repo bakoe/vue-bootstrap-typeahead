@@ -81,6 +81,12 @@
                 <td></td>
                 <td>Text to be appended to the <code>input-group</code></td>
               </tr>
+              <tr>
+                <td><code>rawResults</code></td>
+                <td>Boolean</td>
+                <td></td>
+                <td>If set to true, the list will always show all results (e.g. when working with an API that already pre-processes and filters the entries). Defaults to not being set (with the same result like "false").</td>
+              </tr>
             </tbody>
           </table>
         </div>
