@@ -39,8 +39,8 @@ export default {
     }
   },
   methods: {
-    queryTransformer: function(regex) {
-      return regex.replace(/[ -]/g, '[ -]')
+    queryTransformer: function(queryString) {
+      return queryString.replace(/[ -]/g, '[ -]')
     },
     handleHit(evt) {
       this.selectedCountry = evt
