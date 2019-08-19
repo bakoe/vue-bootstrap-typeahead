@@ -111,6 +111,7 @@ Name | Type | Default | Description
 --- | --- | --- | ---
 data | `Array` | | Array of data to be available for querying. **Required**
 serializer | `Function` | `input => input` | Function used to convert the entries in the `data` array into a text string.
+queryTransformer | `Function` | `input => input` | Function used to transform the query string before comparing it to the data entries. Because the function is executed after sanitizing the query string and escaping RegEx characters, it can be used to inject RegEx operators. 
 size | `String` | | Size of the `input-group`. Valid values: `sm` or `lg`
 backgroundVariant | `String` | | Background color for the autocomplete result `list-group` items. [See valid values](http://getbootstrap.com/docs/4.1/utilities/colors/#background-color)
 textVariant | `String` | | Text color for the autocomplete result `list-group` items. [See valid values](http://getbootstrap.com/docs/4.1/utilities/colors/#color)

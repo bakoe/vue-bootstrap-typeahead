@@ -34,6 +34,7 @@
       :text-variant="textVariant"
       :maxMatches="maxMatches"
       :minMatchingChars="minMatchingChars"
+      :query-transformer="queryTransformer"
       @hit="handleHit"
     >
       <!-- pass down all scoped slots -->
@@ -74,6 +75,11 @@ export default {
       validator: d => d instanceof Array
     },
     serializer: {
+      type: Function,
+      default: (d) => d,
+      validator: d => d instanceof Function
+    },
+    queryTransformer: {
       type: Function,
       default: (d) => d,
       validator: d => d instanceof Function

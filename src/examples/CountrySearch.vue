@@ -8,6 +8,7 @@
       v-model="cntrySearch"
       :serializer="s => s.name"
       placeholder="Canada, United States, etc..."
+      :query-transformer="queryTransformer"
       @hit="handleHit"
     >
       <template slot="append">
@@ -38,6 +39,9 @@ export default {
     }
   },
   methods: {
+    queryTransformer: function(regex) {
+      return regex.replace(/[ -]/g, '[ -]')
+    },
     handleHit(evt) {
       this.selectedCountry = evt
       this.search()

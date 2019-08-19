@@ -28,6 +28,12 @@
                 <td>Function used to convert the entries in the <code>data</code> array into a text string.</td>
               </tr>
               <tr>
+                <td><code>queryTransformer</code></td>
+                <td>Function</td>
+                <td><code>input => input</code></td>
+                <td>Function used to transform the query string before comparing it to the data entries. Because the function is executed after sanitizing the query string and escaping RegEx characters, it can be used to inject RegEx operators.</td>
+              </tr>
+              <tr>
                 <td><code>size</code></td>
                 <td>String</td>
                 <td></td>

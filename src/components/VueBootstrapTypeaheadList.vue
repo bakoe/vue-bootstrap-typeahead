@@ -56,6 +56,11 @@ export default {
     minMatchingChars: {
       type: Number,
       default: 2
+    },
+    queryTransformer: {
+      type: Function,
+      default: (d) => d,
+      validator: d => d instanceof Function
     }
   },
 
@@ -73,7 +78,7 @@ export default {
     },
 
     escapedQuery() {
-      return escapeRegExp(sanitize(this.query))
+      return this.queryTransformer(escapeRegExp(sanitize(this.query)))
     },
 
     matchedItems() {
