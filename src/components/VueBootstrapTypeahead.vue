@@ -146,14 +146,16 @@ export default {
     },
 
     handleHit(evt) {
+      this.inputValue = evt.text
+      this.selectedData = evt.data
+      this.$refs.input.blur()
+      this.isFocused = false
+
       if (typeof this.value !== 'undefined') {
         this.$emit('input', evt.text)
       }
 
-      this.inputValue = evt.text
       this.$emit('hit', evt.data)
-      this.$refs.input.blur()
-      this.isFocused = false
       this.$emit('change', evt.data)
     },
 
@@ -168,6 +170,7 @@ export default {
     handleInput(newValue) {
       this.inputValue = newValue
 
+      this.selectedData = undefined
       this.$emit('change', undefined)
 
       // If v-model is being used, emit an input event
@@ -180,7 +183,14 @@ export default {
   data() {
     return {
       isFocused: false,
-      inputValue: ''
+      inputValue: '',
+      selectedData: undefined
+    }
+  },
+
+  $_veeValidate: {
+    value() {
+      return this.selectedData ? this.selectedData.id : undefined
     }
   },
 
