@@ -72,8 +72,8 @@ export default {
       type: String
     },
     disabled: {
-     type: Boolean,
-     default: false
+      type: Boolean,
+      default: false
     },
     data: {
       type: Array,
@@ -154,6 +154,7 @@ export default {
       this.$emit('hit', evt.data)
       this.$refs.input.blur()
       this.isFocused = false
+      this.$emit('change', evt.data)
     },
 
     handleBlur(evt) {
@@ -166,6 +167,8 @@ export default {
 
     handleInput(newValue) {
       this.inputValue = newValue
+
+      this.$emit('change', undefined)
 
       // If v-model is being used, emit an input event
       if (typeof this.value !== 'undefined') {
