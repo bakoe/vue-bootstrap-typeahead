@@ -109,6 +109,10 @@
                 <td><code>input</code></td>
                 <td>The component can be used with <code>v-model</code></td>
               </tr>
+              <tr>
+                <td><code>change</code></td>
+                <td>Triggered whenever the value of the typeahead changes, i.e. both when the user changed the typeahead search and when the user selected an autocomplete item.</td>
+              </tr>
             </tbody>
           </table>
         </div>
