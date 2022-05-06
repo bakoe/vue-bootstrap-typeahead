@@ -10,7 +10,7 @@
 
 <script>
 export default {
-  name: 'Geocoder'
+  name: 'GeocoderExample'
 }
 </script>
 

@@ -76,7 +76,7 @@ export default {
         }
         const re = new RegExp(this.escapedQuery, 'gi')
 
-        return text.replace(re, `<strong>$&</strong>`)
+        return text.replace(re, '<strong>$&</strong>')
       }
     },
 
