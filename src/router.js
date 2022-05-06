@@ -14,7 +14,7 @@ export default new Router({
     {
       path: '/reference',
       name: 'reference',
-      component: () => import(/* webpackChunkName: "reference" */ './views/Reference.vue')
+      component: () => import(/* webpackChunkName: "reference" */ './views/ReferenceComponent.vue')
     },
     {
       path: '/examples',

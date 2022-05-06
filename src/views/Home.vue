@@ -106,7 +106,7 @@ export default {
 import CountrySearch from '../examples/CountrySearch'
 
 export default {
-  name: 'Home',
+  name: 'HomeComponent',
   components: {
     CountrySearch
   }
